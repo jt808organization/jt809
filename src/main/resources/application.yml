@@ -1,0 +1,15 @@
+spring:  #数据源
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
+    username: root
+    password:
+mybatis:   #配置mybatis
+  mapper-locations: classpath:mapper/*.xml   #Mapper所在的配置文件路径，进行扫描
+  config-location: classpath:mybatis.cfg.xml  # mybaits-config文件
+  type-aliases-package: com.jt666.pojo  #<!-- pojo所在的包，与表一一对应-->
+pagehelper:                       #pagehelper分页插件
+  helperDialect: mysql          #设置数据库方言
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
