@@ -14,6 +14,13 @@ import java.util.List;
 public class LocationServiceImpl implements LocationService {
   @Autowired
   LocationMapper locationMapper;
+/**
+ *功能描述:查询位置信息
+ * 创建人: 陈烙
+ * 时间:2019/4/3 11:14
+ * @param [simNumber]
+ * @return java.util.List<com.jt666.pojo.LocationBean>
+ */
 
     @Override
     public List<LocationBean> selectLocationByID(String simNumber) {
