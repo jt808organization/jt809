@@ -1,5 +1,10 @@
 package com.jt666.pojo;
 
+/**
+ * 创建人：陈烙
+ * 类描述：测试
+ * 时间：2019/4/3  11:17
+ **/
 public class Dept {
     private Long deptno;
     private String dname;
@@ -24,3 +29,4 @@ public class Dept {
                 '}';
     }
 }
+
