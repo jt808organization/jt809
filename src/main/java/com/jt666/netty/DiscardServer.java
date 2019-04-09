@@ -6,12 +6,15 @@ import io.netty.channel.ChannelOption;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 
 @Component
 public class DiscardServer {
+    private static final Logger LOG = LoggerFactory.getLogger(DiscardServer.class);
     @Resource
     private ChildChannelHandler childChannelHandler;
 
@@ -19,6 +22,7 @@ public class DiscardServer {
         EventLoopGroup bossGroup = new NioEventLoopGroup();
         EventLoopGroup workerGroup = new NioEventLoopGroup();
         System.out.println("准备运行端口：" + port);
+        LOG.info("准备运行端口:"+ port);
         try {
             ServerBootstrap bootstrap = new ServerBootstrap();
             bootstrap.group(bossGroup, workerGroup)
